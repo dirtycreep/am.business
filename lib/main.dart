@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 void main() {
   runApp(const MyApp());
@@ -101,25 +102,47 @@ class _MyHomePageState extends State<MyHomePage> {
                               ),
                               onPressed: () {
                                 showModalBottomSheet(
-                                    isScrollControlled: false,
-                                    // backgroundColor: Color(0xff00BFA5),
+                                    backgroundColor: Color(0xffC1DCDD),
+                                    isScrollControlled: true,
                                     context: context,
                                     builder: (context) {
-                                      return Column(
-                                        // mainAxisSize: MainAxisSize.max,
-                                        children: <Widget>[
-                                          Container(
-                                            height: MediaQuery.of(context)
-                                                    .size
-                                                    .height *
-                                                0.5,
-                                            child: Text(
-                                              "  о Загранпаспорт и (или) внутригосударственный паспорт \n (в качестве рекомендации лучше иметь нотариально заверенный перевод) \n  о Наличие абсолютно любого адреса в Армении (для указания как адреса ИП при госрегистрации) \n  о Оплата 3.000 драмов (плюс 200 копеек) (через платёжный терминал в здании Госрегистра)",
-                                              style: TextStyle(
-                                                  color: Colors.black),
-                                            ),
-                                          )
-                                        ],
+                                      return FractionallySizedBox(
+                                        heightFactor: 0.85,
+                                        child: Column(
+                                          children: <Widget>[
+                                            Container(
+                                              child: RichText(
+                                                text: TextSpan(
+                                                    style: TextStyle(
+                                                        fontSize: 17,
+                                                        color: Colors.black),
+                                                    children: [
+                                                      TextSpan(
+                                                        style: GoogleFonts
+                                                            .roboto(),
+                                                        text:
+                                                            "оЗагранпаспорт и (или) внутригосударственный паспорт \n ",
+                                                      ),
+                                                      TextSpan(
+                                                        style: GoogleFonts
+                                                            .roboto(),
+                                                        text:
+                                                            "(в качестве рекомендации лучше иметь нотариально заверенный перевод)   ",
+                                                      ),
+                                                      TextSpan(
+                                                        style: GoogleFonts
+                                                            .roboto(),
+                                                        text:
+                                                            " о Наличие абсолютно любого адреса в Армении (для указания как адреса ИП при госрегистрации) \n  о Оплата 3.000 драмов (плюс 200 копеек) (через платёжный терминал в здании Госрегистра)",
+                                                      ),
+                                                    ]),
+
+                                                // style: TextStyle(
+                                                //     color: Colors.black),
+                                              ),
+                                            )
+                                          ],
+                                        ),
                                       );
                                     });
                               },
@@ -148,25 +171,24 @@ class _MyHomePageState extends State<MyHomePage> {
                               ),
                               onPressed: () {
                                 showModalBottomSheet(
-                                    isScrollControlled: false,
+                                    isScrollControlled: true,
                                     // backgroundColor: Color(0xff00BFA5),
                                     context: context,
                                     builder: (context) {
-                                      return Column(
-                                        // mainAxisSize: MainAxisSize.max,
-                                        children: <Widget>[
-                                          Container(
-                                            height: MediaQuery.of(context)
-                                                    .size
-                                                    .height *
-                                                0.5,
-                                            child: Text(
-                                              "  о Нотариально заверенный перевод загранпаспорта и  \n   (или) внутригосударственного паспорта \n\n  о Наличие простой письменной доверенности \n   (о регистрации ИП через физическое лицо в Армении) \n\n  о Наличие абсолютно любого адреса в Армении \n   (для указания как адреса ИП при госрегистрации) \n\n  о Оплата 3.000 драмов (плюс 200 копеек) \n   (через платёжный терминал в здании Госрегистра)",
-                                              style: TextStyle(
-                                                  color: Colors.black),
-                                            ),
-                                          )
-                                        ],
+                                      return FractionallySizedBox(
+                                        heightFactor: 0.85,
+                                        child: Column(
+                                          // mainAxisSize: MainAxisSize.max,
+                                          children: <Widget>[
+                                            Container(
+                                              child: Text(
+                                                "  о Нотариально заверенный перевод загранпаспорта и  \n   (или) внутригосударственного паспорта \n\n  о Наличие простой письменной доверенности \n   (о регистрации ИП через физическое лицо в Армении) \n\n  о Наличие абсолютно любого адреса в Армении \n   (для указания как адреса ИП при госрегистрации) \n\n  о Оплата 3.000 драмов (плюс 200 копеек) \n   (через платёжный терминал в здании Госрегистра)",
+                                                style: TextStyle(
+                                                    color: Colors.black),
+                                              ),
+                                            )
+                                          ],
+                                        ),
                                       );
                                     });
                               },
